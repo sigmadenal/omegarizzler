@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise!</title>
+    <style>
+        /* Background black and text color white */
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        /* Gift image */
+        .gift {
+            width: 100px;
+            height: 100px;
+            margin-top: 30px;
+            animation: pulse 1s infinite alternate;
+            cursor: pointer;
+        }
+
+        /* Center the content */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center; 
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Center the content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        /* Style for the :3 text */
+        .cat-text {
+            position: absolute;
+            top: 20px; 
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1; 
+        }
+
+        /* Style for the image */
+        .cat-image {
+            position: relative;
+            z-index: 0; 
+        }
+    </style>
+</head>
+<body>
+    <div class="centered">
+        <h1>Surprise!</h1> <!-- Keep the Surprise! text above the image -->
+        <audio id="aww" autoplay>
+            <source src="Aww.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <!-- Removed target="_blank" from the anchor tag and added onclick event -->
+        <a href="javascript:void(0);" onclick="showSecondContent()">
+            <img class="gift" src="gift.png" alt="Pulsating Gift">
+        </a>
+    </div>
+
+    <script>
+        function showSecondContent() {
+            // Replace the content of the body with the content from the second code snippet
+            document.body.innerHTML = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>:3</title>
+                    <style>
+                        /* Center the content */
+                        body {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh; 
+                            margin: 0; 
+                            text-align: center;
+                        }
+
+                        /* Style for the :3 text */
+                        .cat-text {
+                            position: absolute;
+                            top: 300px; /* Position at the top */
+                            left: 50%;
+                            transform: translateX(-50%);
+                            z-index: 1; 
+                        }
+
+                        /* Style for the image */
+                        .cat-image {
+                            position: relative;
+                            z-index: 0; 
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1 class="cat-text">:3</h1> <!-- Move the :3 text above the image -->
+                    <audio id="awww" autoplay>
+                        <source src="Aww.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <img class="cat-image" src="cat-and-flower.gif" alt="cat and flower">
+                </body>
+                </html>
+            `;
+        }
+    </script>
+</body>
+</html>
